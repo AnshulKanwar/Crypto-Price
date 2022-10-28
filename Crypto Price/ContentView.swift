@@ -8,13 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var text = ""
+    @State var response: ResponseBody?
+    @State private var isError: Bool = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack {
+                TextField("Enter Symbol", text: $text)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                
+                if isError {
+                    Text("An error occured. Make sure the symbol is correct")
+                        .multilineTextAlignment(.center)
+                } else {
+                    if let response = response {
+                        Text("$" + String(format: "%.2f", response.price))
+                            .font(.largeTitle)
+                    }
+                }
+            }
+            
+            Spacer()
+            
+            Button("Fetch") {
+                Task {
+                    do {
+                        response = try await getPrice(symbol: text)
+                        isError = false
+                    } catch {
+                        isError = true
+                    }
+                }
+            }
+            .buttonStyle(.borderedProminent)
         }
+        .frame(height: 200)
         .padding()
     }
 }
