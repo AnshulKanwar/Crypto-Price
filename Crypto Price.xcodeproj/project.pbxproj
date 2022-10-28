@@ -13,7 +13,7 @@
 		F87BF66F290BD06B008894EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87BF66E290BD06B008894EB /* Preview Assets.xcassets */; };
 		F87BF676290BD4A3008894EB /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87BF675290BD4A3008894EB /* ModelData.swift */; };
 		F87BF678290C21BA008894EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F87BF677290C21BA008894EB /* README.md */; };
-		F87BF67A290C21FA008894EB /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = F87BF679290C21FA008894EB /* screenshot.png */; };
+		F87BF67E290C2748008894EB /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = F87BF67D290C2748008894EB /* screenshot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		F87BF66E290BD06B008894EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F87BF675290BD4A3008894EB /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		F87BF677290C21BA008894EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F87BF679290C21FA008894EB /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		F87BF67D290C2748008894EB /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		F87BF65B290BD06A008894EB = {
 			isa = PBXGroup;
 			children = (
-				F87BF679290C21FA008894EB /* screenshot.png */,
+				F87BF67D290C2748008894EB /* screenshot.png */,
 				F87BF677290C21BA008894EB /* README.md */,
 				F87BF666290BD06A008894EB /* Crypto Price */,
 				F87BF665290BD06A008894EB /* Products */,
@@ -134,7 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87BF67A290C21FA008894EB /* screenshot.png in Resources */,
+				F87BF67E290C2748008894EB /* screenshot.png in Resources */,
 				F87BF678290C21BA008894EB /* README.md in Resources */,
 				F87BF66F290BD06B008894EB /* Preview Assets.xcassets in Resources */,
 				F87BF66C290BD06B008894EB /* Assets.xcassets in Resources */,

@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct PriceChangePercentView: View {
+    var priceChangePercent: Float
+    
+    var body: some View {
+        HStack {
+            
+            if priceChangePercent >= 0 {
+                Image(systemName: "arrowtriangle.up.fill")
+                    .foregroundColor(.green)
+            } else {
+                Image(systemName: "arrowtriangle.down.fill")
+                    .foregroundColor(.red)
+            }
+            
+            Text(String(priceChangePercent) + "%")
+        }
+        .font(.title2)
+    }
+}
+
 struct ContentView: View {
     @State private var text = ""
     @State var response: ResponseBody?
@@ -26,8 +46,15 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                 } else {
                     if let response = response {
-                        Text("$" + String(format: "%.2f", response.price))
-                            .font(.largeTitle)
+                        HStack {
+                            Text("$" + String(format: "%.2f", response.price))
+                                .font(.largeTitle)
+                            
+                            Spacer()
+                            
+                            PriceChangePercentView(priceChangePercent: response.priceChangePercent)
+                        }
+                        .frame(width: 300)
                     }
                 }
             }

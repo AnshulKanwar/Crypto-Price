@@ -8,7 +8,7 @@
 import Foundation
 
 func getPrice(symbol: String) async throws -> ResponseBody {
-    guard let url = URL(string: "https://api.binance.com/api/v3/ticker/price?symbol=\(symbol)") else {
+    guard let url = URL(string: "https://api.binance.com/api/v3/ticker/24hr?symbol=\(symbol)") else {
         fatalError("Missing URL")
     }
     
@@ -24,16 +24,22 @@ func getPrice(symbol: String) async throws -> ResponseBody {
 struct ResponseBody: Decodable {
     var symbol: String
     var price: Float
+    var priceChangePercent: Float
     
     enum CodingKeys: CodingKey {
         case symbol
-        case price
+        case lastPrice
+        case priceChangePercent
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.symbol = try container.decode(String.self, forKey: .symbol)
-        let priceString = try container.decode(String.self, forKey: .price)
+        
+        let priceString = try container.decode(String.self, forKey: .lastPrice)
         self.price = Float(priceString)!
+        
+        let priceChangePercentString = try container.decode(String.self, forKey: .priceChangePercent)
+        self.priceChangePercent = Float(priceChangePercentString)!
     }
 }
